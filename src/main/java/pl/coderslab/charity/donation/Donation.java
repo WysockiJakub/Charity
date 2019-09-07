@@ -1,11 +1,13 @@
 package pl.coderslab.charity.donation;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Entity
@@ -35,18 +37,23 @@ public class Donation {
     private String zipCode;
 
     @NotBlank
-    private LocalDateTime pickUpTime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime pickUpDate;
 
     @NotBlank
-    private LocalDateTime pickUpComment;
+    private LocalTime pickUpTime;
 
-    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDateTime pickUpTime, LocalDateTime pickUpComment) {
+    @NotBlank
+    private String pickUpComment;
+
+    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDateTime pickUpDate, LocalTime pickUpTime, String pickUpComment) {
         this.quantity = quantity;
         this.categories = categories;
         this.institution = institution;
         this.street = street;
         this.city = city;
         this.zipCode = zipCode;
+        this.pickUpDate = pickUpDate;
         this.pickUpTime = pickUpTime;
         this.pickUpComment = pickUpComment;
     }
@@ -107,19 +114,27 @@ public class Donation {
         this.zipCode = zipCode;
     }
 
-    public LocalDateTime getPickUpTime() {
+    public LocalDateTime getPickUpDate() {
+        return pickUpDate;
+    }
+
+    public void setPickUpDate(LocalDateTime pickUpDate) {
+        this.pickUpDate = pickUpDate;
+    }
+
+    public LocalTime getPickUpTime() {
         return pickUpTime;
     }
 
-    public void setPickUpTime(LocalDateTime pickUpTime) {
+    public void setPickUpTime(LocalTime pickUpTime) {
         this.pickUpTime = pickUpTime;
     }
 
-    public LocalDateTime getPickUpComment() {
+    public String getPickUpComment() {
         return pickUpComment;
     }
 
-    public void setPickUpComment(LocalDateTime pickUpComment) {
+    public void setPickUpComment(String pickUpComment) {
         this.pickUpComment = pickUpComment;
     }
 }
