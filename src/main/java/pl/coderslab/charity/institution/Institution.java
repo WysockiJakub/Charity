@@ -23,6 +23,9 @@ public class Institution {
         this.description = description;
     }
 
+    public Institution() {
+    }
+
     public Long getId() {
         return id;
     }

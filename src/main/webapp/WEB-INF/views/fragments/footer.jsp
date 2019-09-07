@@ -18,7 +18,7 @@
         <div class="bottom-line--icons">
             <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg"/></a> <a href="#"
                                                                                             class="btn btn--small"><img
-                src="images/icon-instagram.svg"/></a>
+                src="<c:url value="/resources/images/icon-instagram.svg"/>"/></a>
         </div>
     </div>
 </footer>
