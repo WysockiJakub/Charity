@@ -6,6 +6,7 @@ import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
@@ -38,7 +39,7 @@ public class Donation {
 
     @NotBlank
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime pickUpDate;
+    private LocalDate pickUpDate;
 
     @NotBlank
     private LocalTime pickUpTime;
@@ -46,7 +47,7 @@ public class Donation {
     @NotBlank
     private String pickUpComment;
 
-    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDateTime pickUpDate, LocalTime pickUpTime, String pickUpComment) {
+    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
         this.quantity = quantity;
         this.categories = categories;
         this.institution = institution;
@@ -114,11 +115,11 @@ public class Donation {
         this.zipCode = zipCode;
     }
 
-    public LocalDateTime getPickUpDate() {
+    public LocalDate getPickUpDate() {
         return pickUpDate;
     }
 
-    public void setPickUpDate(LocalDateTime pickUpDate) {
+    public void setPickUpDate(LocalDate pickUpDate) {
         this.pickUpDate = pickUpDate;
     }
 
