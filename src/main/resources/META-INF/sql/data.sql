@@ -1,7 +1,9 @@
-insert into institution (name, description) values ("Fundacja Dla dzieci", "Pomoc osobom znajdujacym się w trudnej sytuacji zyciowej.");
-insert into institution (name, description) values ("Fundacja Bez domu", "Pomoc dla osób nieposiadajacych miejsca zamieszkania");
-insert into institution (name, description) values ("Fundacja Pamięć", "Pomoc dla osob starszych nie posiadajacych bliskich");
-insert into institution (name, description) values ("Fundacja Pupil", "Pomoc dla schronisk w pozyskiwaniu kocow i poscieli dla zwierzat");
+insert into institution (name, description) values ("Dla dzieci", "Pomoc osobom znajdującym się w trudnej sytuacji życiowej.");
+insert into institution (name, description) values ("Bez domu", "Pomoc dla osób nieposiadajacych miejsca zamieszkania");
+insert into institution (name, description) values ("Pamięć", "Pomoc dla osób starszych nie posiadających bliskich");
+insert into institution (name, description) values ("Pupil", "Pomoc dla schronisk w pozyskiwaniu koców i pościeli dla zwierząt");
+insert into institution (name, description) values ("Talerz Serc", "Pomoc w zapewnieniu posiłku dla osób bezdomnych");
+insert into institution (name, description) values ("Piórnik", "Pomoc dla dzieci z biednych rodzin w zapewnieniu przyborów szkolnych");
 
 insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, street, zipCode, institution_id) values ("Warszawa", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod accumsan dolor sed molestie. Etiam vulputate consequat mi maximus lacinia. Pellentesque vitae nisi nisi.", "2019-08-23", "12:04:45", 3, "Reymonta", "01-123", 1)
 insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, street, zipCode, institution_id) values ("Gdańsk", "Sed placerat cursus diam eget venenatis. Nunc laoreet euismod fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus.", "2019-03-12", "14:22:21", 5, "Kopernika", "02-111", 2)

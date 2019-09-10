@@ -59,6 +59,9 @@ public class Donation {
         this.pickUpComment = pickUpComment;
     }
 
+    public Donation() {
+    }
+
     public Long getId() {
         return id;
     }

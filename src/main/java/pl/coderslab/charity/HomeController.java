@@ -30,6 +30,8 @@ public class HomeController {
         model.addAttribute("allInstitutions", allInstitutions);
         int allDonationsQuantity = donationService.countOfAllDonationsQuantity();
         model.addAttribute("allDonationsQuantity", allDonationsQuantity);
+        int numberOfDonatedInstitutions = institutionService.countDonatedInstitutions();
+        model.addAttribute("allDonatedInstitutions", numberOfDonatedInstitutions);
         return "index";
     }
 }

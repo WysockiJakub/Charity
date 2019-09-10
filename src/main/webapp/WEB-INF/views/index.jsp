@@ -28,7 +28,7 @@
         </div>
 
         <div class="stats--item">
-            <em>5</em>
+            <em>${allDonatedInstitutions}</em>
             <h3>Wspartych organizacji</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate quas
                 quam.</p>
@@ -93,7 +93,7 @@
                     <c:when test="${counter.index % 2 == 0}">
                         <li>
                             <div class="col">
-                                <div class="title">${institution.name}</div>
+                                <div class="title">Fundacja "${institution.name}"</div>
                                 <div class="subtitle">Cel i misja: ${institution.description}</div>
                             </div>
                                 <c:if test="${allInstitutions.size() == counter.index + 1}">
@@ -104,7 +104,7 @@
                     </c:when>
                     <c:when test="${counter.index % 2 == 1}">
                             <div class="col">
-                                <div class="title">${institution.name}</div>
+                                <div class="title">Fundacja "${institution.name}"</div>
                                 <div class="subtitle">Cel i misja: ${institution.description}</div>
                             </div>
                         </li>

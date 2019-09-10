@@ -18,4 +18,6 @@ public class InstitutionService {
     public List<Institution> getAllInstitution() {
         return institutionRepository.findAll();
     }
+
+    public int countDonatedInstitutions() {return institutionRepository.numberOfDonatedInstitutions();}
 }

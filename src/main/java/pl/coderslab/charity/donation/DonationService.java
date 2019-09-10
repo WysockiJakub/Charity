@@ -21,4 +21,8 @@ public class DonationService {
     public int countOfAllDonationsQuantity() {
         return donationRepository.countAllDonationsQuantity();
     }
+
+    public void addDonation(Donation donation) {
+        donationRepository.save(donation);
+    }
 }
