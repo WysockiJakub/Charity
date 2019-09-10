@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import pl.coderslab.charity.institution.InstitutionConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -52,6 +53,11 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 //    public void addFormatters(FormatterRegistry registry) {
 //        registry.addConverter(getRestaurantConverter());
 //    }
+
+    @Bean
+    public InstitutionConverter getInstitutionConverter() {
+        return new InstitutionConverter();
+    }
 
     @Override
     public void configureDefaultServletHandling(
