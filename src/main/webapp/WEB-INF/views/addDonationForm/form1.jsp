@@ -49,8 +49,7 @@
     <form:form method="post" modelAttribute="donation">
         <fieldset>
             <h2>Zaznacz co chcesz oddać:</h2></br>
-            <form:checkboxes path="categories"
-                             items="${categories}"/>
+            <form:checkboxes path="categories" items="${categories}" itemLabel="name" itemValue="id"/>
             <input type="submit" value="Dalej" class="next-step"><br/><br/>
         </fieldset>
     </form:form>

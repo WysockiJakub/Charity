@@ -1,56 +1,29 @@
-package pl.coderslab.charity.donation;
+package pl.coderslab.charity.donation.form;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
-import pl.coderslab.charity.category.Category;
-import pl.coderslab.charity.institution.Institution;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
-@Entity
-@Table(name = "donation")
-public class Donation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NotNull
-    private int quantity;
-
-    @OneToMany
-    private List<Category> categories;
-
-    @ManyToOne
-    private Institution institution;
+public class DonationStepFour {
 
     @NotBlank
     private String street;
-
     @NotBlank
     private String city;
-
     @NotBlank
     private String zipCode;
-
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
-
     @NotNull
     private LocalTime pickUpTime;
-
     @NotBlank
     private String pickUpComment;
 
-    public Donation(int quantity, List<Category> categories, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
-        this.quantity = quantity;
-        this.categories = categories;
-        this.institution = institution;
+    public DonationStepFour(String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
         this.street = street;
         this.city = city;
         this.zipCode = zipCode;
@@ -59,43 +32,7 @@ public class Donation {
         this.pickUpComment = pickUpComment;
     }
 
-    public Donation(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    public Donation() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    public Institution getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(Institution institution) {
-        this.institution = institution;
+    public DonationStepFour() {
     }
 
     public String getStreet() {

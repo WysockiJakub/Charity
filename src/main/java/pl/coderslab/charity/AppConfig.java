@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import pl.coderslab.charity.category.CategoryConverter;
 import pl.coderslab.charity.institution.InstitutionConverter;
 
 import javax.persistence.EntityManagerFactory;
@@ -49,15 +50,25 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new JpaTransactionManager(emf);
     }
 
-//    @Override
-//    public void addFormatters(FormatterRegistry registry) {
-//        registry.addConverter(getRestaurantConverter());
-//    }
+    // Funkcje konfiguracyjne odpowiadające za prawidlowe odczytywanie obiektów
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(getInstitutionConverter());
+        registry.addConverter(getCategoryConverter());
+    }
+
+    @Bean
+    public CategoryConverter getCategoryConverter() {
+        return new CategoryConverter();
+    }
 
     @Bean
     public InstitutionConverter getInstitutionConverter() {
         return new InstitutionConverter();
     }
+
+    //Funkcja umożliwiająca korzystanie z danych statycznych (CSS, JS)
 
     @Override
     public void configureDefaultServletHandling(

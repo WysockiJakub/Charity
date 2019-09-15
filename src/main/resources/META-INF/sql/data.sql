@@ -13,3 +13,9 @@ insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, str
 insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, street, zipCode, institution_id) values ("Szczecin", "Donec elementum elementum augue sed ultricies. Pellentesque non varius velit, at fermentum enim.", "2019-04-22", "15:50:32", 3, "Słowackiego", "01-563", 4)
 insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, street, zipCode, institution_id) values ("Kraków", "Quisque congue dui sed lorem tristique luctus a id nulla. Praesent vel dui et odio lobortis pulvinar.", "2019-08-30", "12:14:42", 8, "Prusa", "24-455", 3)
 insert into donation (city, pickUpComment, pickUpDate, pickUpTime, quantity, street, zipCode, institution_id) values ("Warszawa", "Integer aliquam dui nec urna facilisis, nec pulvinar leo vehicula. Etiam volutpat finibus arcu, at malesuada enim volutpat efficitur.", "2019-06-30", "09:11:53", 1, "Adama Małysza", "12-632", 2)
+
+insert into category (name) value ("ubrania, które nadają się do ponownego użycia");
+insert into category (name) value ("ubrania, do wyrzucenia");
+insert into category (name) value ("zabawki");
+insert into category (name) value ("książki");
+insert into category (name) value ("inne");
